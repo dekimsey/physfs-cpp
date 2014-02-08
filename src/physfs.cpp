@@ -1,7 +1,7 @@
 #include <streambuf>
 #include <string>
 #include <string.h>
-#include "physfs.hpp"
+#include <physfs++/physfs.hpp>
 
 using std::streambuf;
 using std::ios_base;
