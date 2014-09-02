@@ -1,5 +1,7 @@
 add_library(physfs++ physfs.cpp)
-target_link_libraries(physfs++ physfs)
+find_package(PhysFS REQUIRED)
+target_link_libraries(physfs++ ${PHYSFS_LIBRARY})
+set_property(TARGET physfs++ APPEND PROPERTY INCLUDE_DIRECTORIES ${PHYSFS_INCLUDE_DIR})
 set_target_properties(physfs++ PROPERTIES DEBUG_POSTFIX -dbg)
 install(
   TARGETS physfs++
