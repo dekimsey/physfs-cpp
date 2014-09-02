@@ -204,8 +204,8 @@ string getWriteDir() {
 	return PHYSFS_getWriteDir();
 }
 
-void setWriteDir(const string& newDir) {
-	PHYSFS_setWriteDir(newDir.c_str());
+bool setWriteDir(const string& newDir) {
+	return PHYSFS_setWriteDir(newDir.c_str());
 }
 
 void removeFromSearchPath(const string& oldDir) {

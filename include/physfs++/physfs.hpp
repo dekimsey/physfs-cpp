@@ -98,7 +98,7 @@ string getUserDir();
 
 string getWriteDir();
 
-void setWriteDir(string const & newDir);
+bool setWriteDir(string const & newDir);
 
 void removeFromSearchPath(string const & oldDir);
 
