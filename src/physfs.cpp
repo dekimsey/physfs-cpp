@@ -14,6 +14,9 @@ private:
 	fbuf& operator=(const fbuf& other);
 
 	int_type underflow() {
+        if(file == NULL){
+            return traits_type::eof();
+        }
 		if (PHYSFS_eof(file)) {
 			return traits_type::eof();
 		}
@@ -59,6 +62,9 @@ private:
 	}
 
 	int_type overflow( int_type c = traits_type::eof() ) {
+        if(file == NULL){
+            return traits_type::eof();
+        }
 		if (pptr() == pbase() && c == traits_type::eof()) {
 			return 0; // no-op
 		}
